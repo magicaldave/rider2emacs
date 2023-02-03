@@ -123,7 +123,7 @@ fn try_main() -> Result<()> {
     let status = if cfg!(target_os = "windows") {
         Command::new("emacsclientw").args(&args).status()
     } else {
-        Command::new("sh")
+        Command::new("zsh")
             .arg("-c")
             .arg(format!(
                 "emacsopen {}",
