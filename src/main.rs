@@ -126,7 +126,7 @@ fn try_main() -> Result<()> {
         Command::new("zsh")
             .arg("-c")
             .arg(format!(
-                "emacsopen {}",
+                "emacsclient -ns $EMACS_SOCKET_NAME -a '' {}",
                 args.iter()
                     .map(|x| shell_escape::unix::escape(Cow::Borrowed(x)))
                     .collect::<Vec<_>>()
