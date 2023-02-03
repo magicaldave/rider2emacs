@@ -126,7 +126,7 @@ fn try_main() -> Result<()> {
         Command::new("sh")
             .arg("-c")
             .arg(format!(
-                "emacsclient -s $EMACS_SOCKET_NAME {}",
+                "emacsclient -s /run/user/1000/emacs/server {}",
                 args.iter()
                     .map(|x| shell_escape::unix::escape(Cow::Borrowed(x)))
                     .collect::<Vec<_>>()
